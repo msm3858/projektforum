@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'widget_tweaks',
+    'accounts.apps.AccountsConfig',
     'boards.apps.BoardsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -120,3 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+LOGOUT_REDIRECT_URL = 'boards:home'
+LOGIN_REDIRECT_URL = 'boards:home'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
